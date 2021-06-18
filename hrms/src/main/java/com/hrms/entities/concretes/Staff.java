@@ -15,11 +15,11 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Table(name = "staff")
 @PrimaryKeyJoinColumn(name = "id")
-public class Staff extends User{
+public class Staff extends User {
 
-    @Column(name = "firstname")
-    private String firstName;
+	@Column(name = "firstname")
+	private String firstName;
 
-    @Column(name = "lastname")
-    private String lastName;
+	@Column(name = "lastname")
+	private String lastName;
 }
