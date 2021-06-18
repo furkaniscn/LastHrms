@@ -33,12 +33,7 @@ public class JobAdController {
 
 	@GetMapping("/getByJobAdId")
 	public DataResult<JobAd> getByJobAdId(@RequestParam int id) {
-		// Bunların normalde busineste yazılması gerek ama retun işleminde json kaynaklı
-		// bir referans adresi hatası alıyorum
-		// Tek bulabildiğim çözüm yoluda bu oldu
-		// jobAd ye direk eşittir diyip jobserviceden gelen referansı verdim hata
-		// çzülmedi
-		// Son çare olarak burada new leyip parametrelerini eşitledim
+
 		JobAd jobAd = new JobAd();
 		JobAd jobAdForSet = this.jobAdService.getByJobAdId(id).getData();
 		if (jobAdForSet == null) {
