@@ -17,15 +17,15 @@ import java.util.List;
 @CrossOrigin
 public class WorkTimesController {
 
-    private WorkTimeService workTimeService;
+	private WorkTimeService workTimeService;
 
-    @Autowired
-    public WorkTimesController(WorkTimeService workTimeService) {
-        this.workTimeService = workTimeService;
-    }
+	@Autowired
+	public WorkTimesController(WorkTimeService workTimeService) {
+		this.workTimeService = workTimeService;
+	}
 
-    @GetMapping("/getAll")
-    public DataResult<List<WorkTime>> getAll(){
-        return this.workTimeService.getAll();
-    }
+	@GetMapping("/getAll")
+	public DataResult<List<WorkTime>> getAll() {
+		return this.workTimeService.getAll();
+	}
 }

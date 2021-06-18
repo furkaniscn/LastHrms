@@ -17,15 +17,15 @@ import java.util.List;
 @CrossOrigin
 public class CitysController {
 
-    private CityService cityService;
+	private CityService cityService;
 
-    @Autowired
-    public CitysController(CityService cityService) {
-        this.cityService = cityService;
-    }
+	@Autowired
+	public CitysController(CityService cityService) {
+		this.cityService = cityService;
+	}
 
-    @GetMapping("/getAll")
-    public DataResult<List<City>> getAll(){
-        return this.cityService.getAll();
-    }
+	@GetMapping("/getAll")
+	public DataResult<List<City>> getAll() {
+		return this.cityService.getAll();
+	}
 }

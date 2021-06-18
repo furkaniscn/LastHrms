@@ -11,19 +11,19 @@ import com.hrms.core.utilities.results.Result;
 @RequestMapping("/api/activationcode")
 @CrossOrigin
 public class ActivationCodeController {
-    private ActivationCodeService activationCodeService;
+	private ActivationCodeService activationCodeService;
 
-    @Autowired
-    public ActivationCodeController(ActivationCodeService activationCodeService) {
-        this.activationCodeService = activationCodeService;
-    }
+	@Autowired
+	public ActivationCodeController(ActivationCodeService activationCodeService) {
+		this.activationCodeService = activationCodeService;
+	}
 
-    @GetMapping("/active/{code}")
-    public ResponseEntity<?> activateUser(@PathVariable String code){
-        Result result=this.activationCodeService.activateUser(code);
-        if(result.isSuccess()){
-            return ResponseEntity.ok(result);
-        }
-        return ResponseEntity.badRequest().body(result);
-    }
+	@GetMapping("/active/{code}")
+	public ResponseEntity<?> activateUser(@PathVariable String code) {
+		Result result = this.activationCodeService.activateUser(code);
+		if (result.isSuccess()) {
+			return ResponseEntity.ok(result);
+		}
+		return ResponseEntity.badRequest().body(result);
+	}
 }

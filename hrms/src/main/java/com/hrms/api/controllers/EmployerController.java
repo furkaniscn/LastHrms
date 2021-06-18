@@ -17,29 +17,29 @@ import java.util.List;
 @CrossOrigin
 public class EmployerController {
 
-    private EmployerService employerService;
+	private EmployerService employerService;
 
-    @Autowired
-    public EmployerController(EmployerService employerService) {
-        this.employerService = employerService;
-    }
+	@Autowired
+	public EmployerController(EmployerService employerService) {
+		this.employerService = employerService;
+	}
 
-    @GetMapping("/getall")
-    public DataResult<List<Employer>> getAll(){
-        return this.employerService.getAll();
-    }
+	@GetMapping("/getall")
+	public DataResult<List<Employer>> getAll() {
+		return this.employerService.getAll();
+	}
 
-    @PostMapping("/add")
-    public ResponseEntity<?> add(@RequestBody EmployerForRegisterDto employerForRegisterDto){
-        Result result=this.employerService.add(employerForRegisterDto);
-        if(result.isSuccess()){
-            return ResponseEntity.ok(result);
-        }
-        return ResponseEntity.badRequest().body(result);
-    }
+	@PostMapping("/add")
+	public ResponseEntity<?> add(@RequestBody EmployerForRegisterDto employerForRegisterDto) {
+		Result result = this.employerService.add(employerForRegisterDto);
+		if (result.isSuccess()) {
+			return ResponseEntity.ok(result);
+		}
+		return ResponseEntity.badRequest().body(result);
+	}
 
-    @GetMapping("/getById")
-    DataResult<Employer> getById(@RequestParam int id){
-        return this.employerService.getById(id);
-    }
+	@GetMapping("/getById")
+	DataResult<Employer> getById(@RequestParam int id) {
+		return this.employerService.getById(id);
+	}
 }

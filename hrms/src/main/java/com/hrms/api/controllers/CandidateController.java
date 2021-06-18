@@ -17,24 +17,24 @@ import java.util.List;
 @CrossOrigin
 public class CandidateController {
 
-    private CandidateService candidateService;
+	private CandidateService candidateService;
 
-    @Autowired
-    public CandidateController(CandidateService candidateService) {
-        this.candidateService = candidateService;
-    }
+	@Autowired
+	public CandidateController(CandidateService candidateService) {
+		this.candidateService = candidateService;
+	}
 
-    @GetMapping("/getall")
-    public DataResult<List<Candidate>> getAll(){
-        return candidateService.getAll();
-    }
+	@GetMapping("/getall")
+	public DataResult<List<Candidate>> getAll() {
+		return candidateService.getAll();
+	}
 
-    @PostMapping("/add")
-    public ResponseEntity<?> add(@RequestBody CandidateForRegisterDto candidateForRegisterDto){
-        Result result=this.candidateService.add(candidateForRegisterDto);
-        if(result.isSuccess()){
-            return ResponseEntity.ok(result);
-        }
-        return ResponseEntity.badRequest().body(result);
-    }
+	@PostMapping("/add")
+	public ResponseEntity<?> add(@RequestBody CandidateForRegisterDto candidateForRegisterDto) {
+		Result result = this.candidateService.add(candidateForRegisterDto);
+		if (result.isSuccess()) {
+			return ResponseEntity.ok(result);
+		}
+		return ResponseEntity.badRequest().body(result);
+	}
 }

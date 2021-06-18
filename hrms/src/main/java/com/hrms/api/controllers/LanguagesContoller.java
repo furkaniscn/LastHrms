@@ -16,25 +16,25 @@ import java.util.List;
 @CrossOrigin
 public class LanguagesContoller {
 
-    private LanguageService languageService;
+	private LanguageService languageService;
 
-    @Autowired
-    public LanguagesContoller(LanguageService languageService) {
-        this.languageService = languageService;
-    }
+	@Autowired
+	public LanguagesContoller(LanguageService languageService) {
+		this.languageService = languageService;
+	}
 
-    @PostMapping("/addLanguage")
-    public Result addLanguage(@RequestBody LanguageForSetDto languageForSetDto){
-        return this.languageService.addLanguage(languageForSetDto);
-    }
+	@PostMapping("/addLanguage")
+	public Result addLanguage(@RequestBody LanguageForSetDto languageForSetDto) {
+		return this.languageService.addLanguage(languageForSetDto);
+	}
 
-    @DeleteMapping("/deleteLanguage")
-    public Result deleteLanguage(@RequestParam int languageId){
-        return this.languageService.deleteLanguage(languageId);
-    }
+	@DeleteMapping("/deleteLanguage")
+	public Result deleteLanguage(@RequestParam int languageId) {
+		return this.languageService.deleteLanguage(languageId);
+	}
 
-    @GetMapping("/getByCvId")
-    public DataResult<List<Language>> getByCvId(@RequestParam int cvId){
-        return this.languageService.getByCvId(cvId);
-    }
+	@GetMapping("/getByCvId")
+	public DataResult<List<Language>> getByCvId(@RequestParam int cvId) {
+		return this.languageService.getByCvId(cvId);
+	}
 }
